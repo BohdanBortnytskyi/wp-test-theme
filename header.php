@@ -25,35 +25,40 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'test-theme' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$test_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $test_theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $test_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+	<header id="masthead" class="page-header">
+	
+		<div class="page-header__top container">
+      <a class="page-header__logo" href="#">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" width="69" height="32" alt="WP Test Task Logo">
+      </a>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'test-theme' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+			<nav id="site-navigation" class="main-nav">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'test-theme' ); ?></button>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+						'menu_class'     => 'main-nav'
+					)
+				);
+				?>
+			</nav><!-- #site-navigation -->
+
+      <a class="page-header__avatar" href="#">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/avatar.svg" width="48" height="48" alt="User avatar">
+      </a>
+    </div>
+
+    <div class="page-header__bottom">
+      <div class="container">
+				<h1 class="page-header__title">Sed ut perspiciatis unde omnis iste natus error sit</h1>
+				<p class="page-header__description">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
+				<div class="page-header-buttons">
+					<button class="page-header-buttons__start-now" type="button">Start right now</button>
+					<button class="page-header-buttons__learn-more" type="button">Learn more</button>
+				</div>
+			</div>
+    </div>
+		
 	</header><!-- #masthead -->

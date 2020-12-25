@@ -113,14 +113,14 @@ img {
   border: 1px solid #ffffff;
 }
 
-.main-nav__list {
+.main-nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
   gap: 32px;
 }
-.main-nav__list a {
+.main-nav ul a {
   color: #373F41;
 }
 
@@ -302,3 +302,5 @@ img {
   height: 544px;
   background-color: #3C64B1;
 }
+
+/*# sourceMappingURL=main.css.map */
