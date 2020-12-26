@@ -32,14 +32,14 @@
         <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" width="69" height="32" alt="WP Test Task Logo">
       </a>
 
-			<nav id="site-navigation" class="main-nav">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'test-theme' ); ?></button>
+			<nav id="site-navigation" class="main-navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'test-theme' ); ?></button>
 				<?php
 				wp_nav_menu(
 					array(
 						'theme_location' => 'menu-1',
 						'menu_id'        => 'primary-menu',
-						'menu_class'     => 'main-nav'
+						'container' => ''
 					)
 				);
 				?>
@@ -52,13 +52,13 @@
 
     <div class="page-header__bottom">
       <div class="container">
-				<h1 class="page-header__title">Sed ut perspiciatis unde omnis iste natus error sit</h1>
-				<p class="page-header__description">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
-				<div class="page-header-buttons">
-					<button class="page-header-buttons__start-now" type="button">Start right now</button>
-					<button class="page-header-buttons__learn-more" type="button">Learn more</button>
-				</div>
-			</div>
+        <h1 class="page-header__title">Sed ut perspiciatis unde omnis iste natus error sit</h1>
+        <p class="page-header__description">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
+        <div class="page-header-buttons">
+          <button class="page-header-buttons__start-now" type="button">Start right now</button>
+          <button class="page-header-buttons__learn-more" type="button">Learn more</button>
+        </div>
+      </div>
     </div>
 		
 	</header><!-- #masthead -->
