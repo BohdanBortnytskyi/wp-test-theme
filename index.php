@@ -15,7 +15,59 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="page-main">
+
+		<section class="advantages container">
+      <h2>Grow your business with better Shipping</h2>
+      <p class="section-description advantages__description">We help the world’s leading organizations follow their shipping</p>
+      <ul class="advantages__list">
+        <li class="advantages__item advantages__item--briefcase">
+          <h3>Doloremque laudantium</h3>
+          <p>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.</p>
+          <a href="#">Discover</a>
+        </li>
+        <li class="advantages__item advantages__item--life-buoy">
+          <h3>Nemo enim ipsam</h3>
+          <p>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.</p>
+          <a href="#">Discover</a>
+        </li>
+        <li class="advantages__item advantages__item--tool">
+          <h3>Numquam eius modi</h3>
+          <p>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.</p>
+          <a href="#">Discover</a>
+        </li>
+      </ul>
+    </section>
+
+		<section class="testimonials">
+      <h2 class="visually-hidden">Testimonials</h2>
+      <div class="slider container">
+        <ul class="slider__list">
+          <li class="slider__item slider__item--current">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/slide1.jpg" width="540" height="350" alt="Testimonial image">
+            <figure>
+              <blockquote>Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit minimum comprehensam ne, usu cu stet prompta reformidans.</blockquote>
+              <figcaption>
+                <cite class="testimonial-author">Connie Robertson</cite> at <cite class="testimonial-company">Google</cite>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="slider__item">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/slide1.jpg" width="540" height="350" alt="Testimonial image">
+            <figure>
+              <blockquote>2 Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit minimum comprehensam ne, usu cu stet prompta reformidans.</blockquote>
+              <figcaption>
+                <cite class="testimonial-author">2 Connie Robertson</cite> at <cite class="testimonial-company">Google</cite>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+        <div class="slider__controls">
+          <button type="button" class="prev-slide" aria-label="Previous Slide"></button>
+          <button type="button" class="next-slide" aria-label="Next Slide"></button>
+        </div>
+      </div>
+    </section>
 
 		<?php
 		if ( have_posts() ) :
@@ -27,28 +79,36 @@ get_header();
 				</header>
 				<?php
 			endif;
+			?>
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			<section class="blog-posts container">
+				<h2>At vero eos et accusamus et iusto odio</h2>
+				<p class="section-description blog-posts__description">We help the world’s leading organizations follow their shipping</p>
+				<ul class="blog-posts__list">
+					<?php 
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+						/*
+						* Include the Post-Type-specific template for the content.
+						* If you want to override this in a child theme, then include a file
+						* called content-___.php (where ___ is the Post Type name) and that will be used instead.
+						*/
+						get_template_part( 'template-parts/content', get_post_type() );
 
-			endwhile;
+					endwhile;
 
-			the_posts_navigation();
+					the_posts_navigation();
 
-		else :
+				else :
 
-			get_template_part( 'template-parts/content', 'none' );
+					get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
+				endif;
+				?>
+			</ul>
+		</section>
 
 	</main><!-- #main -->
 

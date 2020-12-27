@@ -44,10 +44,13 @@
 				);
 				?>
 			</nav><!-- #site-navigation -->
-
-      <a class="page-header__avatar" href="#">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/avatar.svg" width="48" height="48" alt="User avatar">
-      </a>
+			<?php if ( is_user_logged_in() ) { ?>
+				<a class="page-header__avatar" href="#">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/avatar.svg" width="48" height="48" alt="User avatar">
+				</a>
+			<?php } else { ?>
+				<a href="/wp-login.php" rel="home">Log in</a>
+			<?php } ?>
     </div>
 
     <div class="page-header__bottom">
