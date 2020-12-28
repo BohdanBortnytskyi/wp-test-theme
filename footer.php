@@ -8,15 +8,20 @@
  *
  * @package test-theme
  */
-
+global $test_theme_opt;
 ?>
 
 	<footer id="colophon" class="page-footer">
 		<div class="container">
       <div class="page-footer__top">
         <div class="page-footer__wrapper">
-          <a class="page-header__logo" href="#">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/logo-footer.svg" width="69" height="32" alt="WP Test Task Logo">
+          <a class="page-header__logo" href="<?php echo home_url('/'); ?>">
+            <?php $custom_logo_footer = $test_theme_opt['test-theme-logo-footer']['url']; ?>
+            <?php if($custom_logo_footer) { ?>
+              <img src="<?php echo esc_url($custom_logo_footer); ?>" alt="WP Test Task Logo">
+            <?php } else {?>
+              <img src="<?php echo get_template_directory_uri(); ?>/img/logo-footer.svg" width="69" height="32" alt="WP Test Task Logo">
+            <?php } ?>
           </a>
           <p class="page-footer__copyright">Copyright © 2020. LogoIpsum. All rights reserved.</p>
         </div>
@@ -50,13 +55,13 @@
         </div>
         <ul class="page-footer__social-links">
           <li>
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook.svg" width="8" height="16" alt="Facebook"></a>
+            <a href="<?php echo $test_theme_opt['test-theme-facebook']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/facebook.svg" width="8" height="16" alt="Facebook"></a>
           </li>
           <li>
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter.svg" width="20" height="16" alt="Twitter"></a>
+            <a href="<?php echo $test_theme_opt['test-theme-twitter']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/twitter.svg" width="20" height="16" alt="Twitter"></a>
           </li>
           <li>
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram.svg" width="16" height="16" alt="Instagram"></a>
+            <a href="<?php echo $test_theme_opt['test-theme-instagram']; ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/instagram.svg" width="16" height="16" alt="Instagram"></a>
           </li>
         </ul>
       </div>

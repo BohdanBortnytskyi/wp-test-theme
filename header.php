@@ -24,11 +24,11 @@ global $test_theme_opt;
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'test-theme' ); ?></a>
-<?php $custom_logo = $test_theme_opt['test-theme-logo']['url']; ?>
 	<header id="masthead" class="page-header">
 	
 		<div class="page-header__top container">
       <a class="page-header__logo" href="<?php echo home_url('/'); ?>">
+			<?php $custom_logo = $test_theme_opt['test-theme-logo']['url']; ?>
 				<?php if($custom_logo) { ?>
         	<img src="<?php echo esc_url($custom_logo); ?>" alt="WP Test Task Logo">
 				<?php } else {?>

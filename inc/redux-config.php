@@ -318,7 +318,7 @@ Redux::set_help_sidebar( $opt_name, $content );
  * ---> START SECTIONS
  */
 
- // -> START Header Settings
+// -> START Header Settings
 Redux::set_section(
 	$opt_name,
 	array(
@@ -331,6 +331,21 @@ Redux::set_section(
 );
 
 require_once Redux_Core::$dir . '../sample/sections/header/logo.php';
+
+// -> START Footer Settings
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Footer Settings', 'your-textdomain-here' ),
+		'id'               => 'footer',
+		'desc'             => esc_html__( 'Customize footer blocks', 'your-textdomain-here' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-idea',
+	)
+);
+
+require_once Redux_Core::$dir . '../sample/sections/footer/logo.php';
+require_once Redux_Core::$dir . '../sample/sections/footer/social-links.php';
 
 // -> START Basic Fields
 Redux::set_section(

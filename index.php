@@ -43,24 +43,16 @@ get_header();
       <h2 class="visually-hidden">Testimonials</h2>
       <div class="slider container">
         <ul class="slider__list">
-          <li class="slider__item slider__item--current">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/slide1.jpg" width="540" height="350" alt="Testimonial image">
-            <figure>
-              <blockquote>Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit minimum comprehensam ne, usu cu stet prompta reformidans.</blockquote>
-              <figcaption>
-                <cite class="testimonial-author">Connie Robertson</cite> at <cite class="testimonial-company">Google</cite>
-              </figcaption>
-            </figure>
-          </li>
-          <li class="slider__item">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/slide1.jpg" width="540" height="350" alt="Testimonial image">
-            <figure>
-              <blockquote>2 Est tation latine aliquip id, mea ad tale illud definitiones. Periculis omittantur necessitatibus eum ad, pro eripuit minimum comprehensam ne, usu cu stet prompta reformidans.</blockquote>
-              <figcaption>
-                <cite class="testimonial-author">2 Connie Robertson</cite> at <cite class="testimonial-company">Google</cite>
-              </figcaption>
-            </figure>
-          </li>
+          <?php $loop = new WP_Query( array( 'post_type' => 'testimonial' )); ?>
+          <?php 
+            /* Start the Loop */
+            while ( $loop->have_posts() ) :
+              $loop->the_post();
+
+              get_template_part( 'template-parts/content-testimonial', get_post_type() );
+
+            endwhile;
+          ?>
         </ul>
         <div class="slider__controls">
           <button type="button" class="prev-slide" aria-label="Previous Slide"></button>
@@ -85,7 +77,7 @@ get_header();
 				<h2>At vero eos et accusamus et iusto odio</h2>
 				<p class="section-description blog-posts__description">We help the world’s leading organizations follow their shipping</p>
 				<ul class="blog-posts__list">
-					<?php 
+          <?php 
 					/* Start the Loop */
 					while ( have_posts() ) :
 						the_post();

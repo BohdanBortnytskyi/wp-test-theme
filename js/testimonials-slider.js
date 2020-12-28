@@ -5,6 +5,12 @@
   var sliderNext = document.querySelector(".slider__controls .next-slide");
   var sliderPrev = document.querySelector(".slider__controls .prev-slide");
 
+  for(var i = 0; i < slides.length; i++) {
+    if (i === 0) {
+      slides[i].classList.add("slider__item--current");
+    }
+  }
+
   var sliderCurrent = 0;
 
   if(sliderNext && sliderPrev) {
