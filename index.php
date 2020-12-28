@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="page-main">
-
+    
 		<section class="advantages container">
       <h2>Grow your business with better Shipping</h2>
       <p class="section-description advantages__description">We help the world’s leading organizations follow their shipping</p>

@@ -71,6 +71,7 @@ img {
   position: relative;
 }
 .page-header__bottom video {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;

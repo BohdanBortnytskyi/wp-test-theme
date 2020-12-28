@@ -150,6 +150,8 @@ function test_theme_scripts() {
 
 	wp_enqueue_script( 'test-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
+	wp_enqueue_script( 'test-theme-header-bg', get_template_directory_uri() . '/js/header-bg.js', array(), _S_VERSION, true );
+
 	wp_enqueue_script( 'test-theme-popup', get_template_directory_uri() . '/js/popup.js', array(), _S_VERSION, true );
 
 	wp_enqueue_script( 'test-theme-scroll', get_template_directory_uri() . '/js/scroll.js', array(), _S_VERSION, true );

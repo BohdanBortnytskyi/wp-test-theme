@@ -24,17 +24,18 @@ global $test_theme_opt;
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'test-theme' ); ?></a>
+
 	<header id="masthead" class="page-header">
 	
 		<div class="page-header__top container">
-      <a class="page-header__logo" href="<?php echo home_url('/'); ?>">
-			<?php $custom_logo = $test_theme_opt['test-theme-logo']['url']; ?>
-				<?php if($custom_logo) { ?>
-        	<img src="<?php echo esc_url($custom_logo); ?>" alt="WP Test Task Logo">
-				<?php } else {?>
-					<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" width="69" height="32" alt="WP Test Task Logo">
-				<?php } ?>
-      </a>
+			<a class="page-header__logo" href="<?php echo home_url('/'); ?>">
+					<?php $custom_logo = $test_theme_opt['test-theme-logo']['url']; ?>
+						<?php if($custom_logo) { ?>
+					<img src="<?php echo esc_url($custom_logo); ?>" alt="WP Test Task Logo">
+						<?php } else {?>
+							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" width="69" height="32" alt="WP Test Task Logo">
+						<?php } ?>
+			</a>
 
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'test-theme' ); ?></button>
@@ -56,10 +57,14 @@ global $test_theme_opt;
 			<?php } else { ?>
 				<a href="/wp-login.php" rel="home">Log in</a>
 			<?php } ?>
-    </div>
+		</div>
 
 		<?php if ( is_front_page() ) : ?>
-			<div class="page-header__bottom">
+			<div class="page-header__bottom<?php if($test_theme_opt['test-theme-bg'] == '2') { echo ' video-bg'; } ?>" data-bg="<?php echo esc_url($test_theme_opt['test-theme-bg-image']['url']); ?>">
+				<video preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+					<source src="<?php echo esc_url($test_theme_opt['test-theme-bg-video']['url']); ?>" type="video/mp4">
+					<source src="movie.webm" type="video/webm">Sorry, your browser does not support HTML5 video.
+				</video>
 				<div class="container">
 					<h1 class="page-header__title">Sed ut perspiciatis unde omnis iste natus error sit</h1>
 					<p class="page-header__description">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
