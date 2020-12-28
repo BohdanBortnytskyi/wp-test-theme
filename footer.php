@@ -27,21 +27,29 @@ global $test_theme_opt;
         </div>
         <div class="services">
           <h3>Services</h3>
-          <ul class="services__list">
-            <li><a href="#">Email Marketing</a></li>
-            <li><a href="#">Campaigns</a></li>
-            <li><a href="#">Branding</a></li>
-            <li><a href="#">Offline</a></li>
-          </ul>
+          <?php
+            wp_nav_menu(
+              array(
+                'theme_location'  => 'footer-1',
+                'menu_id'         => 'footer-menu-1',
+                'container'       => 'ul',
+                'container_class' => 'services__list'
+              )
+            );
+          ?>
         </div>
         <div class="about">
           <h3>About</h3>
-          <ul class="about__list">
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Benefits</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
+          <?php
+            wp_nav_menu(
+              array(
+                'theme_location'  => 'footer-2',
+                'menu_id'         => 'footer-menu-2',
+                'container'       => 'ul',
+                'container_class' => 'about__list'
+              )
+            );
+          ?>
         </div>
         <button id="button-top" class="button-footer button-top" type="button"></button>
       </div>

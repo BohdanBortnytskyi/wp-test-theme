@@ -43,11 +43,11 @@ get_header();
       <h2 class="visually-hidden">Testimonials</h2>
       <div class="slider container">
         <ul class="slider__list">
-          <?php $loop = new WP_Query( array( 'post_type' => 'testimonial' )); ?>
+          <?php $testimonials_loop = new WP_Query( array( 'post_type' => 'testimonial' )); ?>
           <?php 
             /* Start the Loop */
-            while ( $loop->have_posts() ) :
-              $loop->the_post();
+            while ( $testimonials_loop->have_posts() ) :
+              $testimonials_loop->the_post();
 
               get_template_part( 'template-parts/content-testimonial', get_post_type() );
 

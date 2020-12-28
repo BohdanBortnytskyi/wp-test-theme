@@ -6,8 +6,6 @@
  *
  * @package test-theme
  */
-$count_posts = wp_count_posts( 'testimonial' )->publish;
-// var_dump((int)$count_posts);
 ?>
 
 <li class="slider__item">

@@ -39,15 +39,16 @@ global $test_theme_opt;
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'test-theme' ); ?></button>
 				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-						'container' => ''
-					)
-				);
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+							'container' => ''
+						)
+					);
 				?>
 			</nav><!-- #site-navigation -->
+
 			<?php if ( is_user_logged_in() ) { ?>
 				<a class="page-header__avatar" href="#">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/avatar.svg" width="48" height="48" alt="User avatar">
@@ -57,15 +58,17 @@ global $test_theme_opt;
 			<?php } ?>
     </div>
 
-    <div class="page-header__bottom">
-      <div class="container">
-        <h1 class="page-header__title">Sed ut perspiciatis unde omnis iste natus error sit</h1>
-        <p class="page-header__description">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
-        <div class="page-header-buttons">
-          <button class="page-header-buttons__start-now" type="button">Start right now</button>
-          <button class="page-header-buttons__learn-more" type="button">Learn more</button>
-        </div>
-      </div>
-    </div>
+		<?php if ( is_front_page() ) : ?>
+			<div class="page-header__bottom">
+				<div class="container">
+					<h1 class="page-header__title">Sed ut perspiciatis unde omnis iste natus error sit</h1>
+					<p class="page-header__description">Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te.</p>
+					<div class="page-header-buttons">
+						<button class="page-header-buttons__start-now" type="button">Start right now</button>
+						<button class="page-header-buttons__learn-more" type="button">Learn more</button>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
 		
 	</header><!-- #masthead -->
