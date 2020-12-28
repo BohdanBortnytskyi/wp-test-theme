@@ -13,7 +13,7 @@
   <figure>
     <blockquote><?php the_content(); ?></blockquote>
     <figcaption>
-      <cite class="testimonial-author"><?php the_title(); ?></cite>
+      <cite class="testimonial-author"><?php the_field('testimonial_authors_name'); ?></cite> at <cite class="testimonial-company"><?php the_field('testimonial_authors_company'); ?></cite>
     </figcaption>
   </figure>
 </li>

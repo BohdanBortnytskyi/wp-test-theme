@@ -21,21 +21,16 @@ get_header();
       <h2>Grow your business with better Shipping</h2>
       <p class="section-description advantages__description">We help the world’s leading organizations follow their shipping</p>
       <ul class="advantages__list">
-        <li class="advantages__item advantages__item--briefcase">
-          <h3>Doloremque laudantium</h3>
-          <p>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.</p>
-          <a href="#">Discover</a>
-        </li>
-        <li class="advantages__item advantages__item--life-buoy">
-          <h3>Nemo enim ipsam</h3>
-          <p>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.</p>
-          <a href="#">Discover</a>
-        </li>
-        <li class="advantages__item advantages__item--tool">
-          <h3>Numquam eius modi</h3>
-          <p>At eripuit signiferumque sea, vel ad mucius molestie, cu labitur iuvaret vulputate sed.</p>
-          <a href="#">Discover</a>
-        </li>
+        <?php 
+          $advantages_loop = new WP_Query( array( 'post_type' => 'advantages' ));
+          /* Start the Loop of advantages */
+          while ( $advantages_loop->have_posts() ) :
+            $advantages_loop->the_post();
+
+            get_template_part( 'template-parts/content-advantages', get_post_type() );
+
+          endwhile;
+        ?>
       </ul>
     </section>
 
@@ -43,9 +38,9 @@ get_header();
       <h2 class="visually-hidden">Testimonials</h2>
       <div class="slider container">
         <ul class="slider__list">
-          <?php $testimonials_loop = new WP_Query( array( 'post_type' => 'testimonial' )); ?>
           <?php 
-            /* Start the Loop */
+            $testimonials_loop = new WP_Query( array( 'post_type' => 'testimonial' ));
+            /* Start the Loop of testimonials */
             while ( $testimonials_loop->have_posts() ) :
               $testimonials_loop->the_post();
 
@@ -78,15 +73,10 @@ get_header();
 				<p class="section-description blog-posts__description">We help the world’s leading organizations follow their shipping</p>
 				<ul class="blog-posts__list">
           <?php 
-					/* Start the Loop */
+					/* Start the Loop of blog-posts */
 					while ( have_posts() ) :
 						the_post();
 
-						/*
-						* Include the Post-Type-specific template for the content.
-						* If you want to override this in a child theme, then include a file
-						* called content-___.php (where ___ is the Post Type name) and that will be used instead.
-						*/
 						get_template_part( 'template-parts/content', get_post_type() );
 
 					endwhile;

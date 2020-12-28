@@ -95,10 +95,10 @@ $args = array(
 	'allow_sub_menu'            => true,
 
 	// The text to appear in the admin menu.
-	'menu_title'                => esc_html__( 'Sample Options', 'your-textdomain-here' ),
+	'menu_title'                => esc_html__( 'Theme Options', 'your-textdomain-here' ),
 
 	// The text to appear on the page title.
-	'page_title'                => esc_html__( 'Sample Options', 'your-textdomain-here' ),
+	'page_title'                => esc_html__( 'Theme Options', 'your-textdomain-here' ),
 
 	// Enabled the Webfonts typography module to use asynchronous fonts.
 	'async_typography'          => false,
