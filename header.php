@@ -8,7 +8,7 @@
  *
  * @package test-theme
  */
-
+global $test_theme_opt;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -24,12 +24,16 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'test-theme' ); ?></a>
-
+<?php $custom_logo = $test_theme_opt['test-theme-logo']['url']; ?>
 	<header id="masthead" class="page-header">
 	
 		<div class="page-header__top container">
-      <a class="page-header__logo" href="#">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" width="69" height="32" alt="WP Test Task Logo">
+      <a class="page-header__logo" href="<?php echo home_url('/'); ?>">
+				<?php if($custom_logo) { ?>
+        	<img src="<?php echo esc_url($custom_logo); ?>" alt="WP Test Task Logo">
+				<?php } else {?>
+					<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" width="69" height="32" alt="WP Test Task Logo">
+				<?php } ?>
       </a>
 
 			<nav id="site-navigation" class="main-navigation">

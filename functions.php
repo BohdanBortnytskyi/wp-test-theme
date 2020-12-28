@@ -187,3 +187,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Register custom post types.
+ */
+require get_template_directory() . '/inc/custom-post-types.php';
+
+/**
+ * Redux Framework options.
+ */
+require get_template_directory() . '/inc/redux-config.php';
